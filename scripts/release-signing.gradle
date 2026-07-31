@@ -1,0 +1,23 @@
+// release-signing.gradle
+// 通过 `./gradlew assembleRelease -I ../scripts/release-signing.gradle` 注入，不改动 prebuild 生成的 build.gradle，
+// 因此 `expo prebuild --clean` 重建 android/ 后依旧生效。
+//
+// 做了两件事：
+//  1) 让 release 构建复用 debug 签名（个人侧载够用，无需单独密钥文件 / 密码）；
+//  2) 关闭 minify / shrinkResources，避免 ProGuard 把 Expo / React Native 的反射调用打挂，
+//     保证首版 Release 包能正常启动（JS 已内嵌进 APK，打开即用、无需 Metro）。
+allprojects { proj ->
+    proj.afterEvaluate {
+        def hasAndroidApp = proj.plugins.hasPlugin('com.android.application')
+        if (hasAndroidApp) {
+            def a = proj.android
+            a.buildTypes.configureEach { bt ->
+                if (bt.name == 'release') {
+                    bt.signingConfig = a.signingConfigs.debug
+                    bt.minifyEnabled = false
+                    bt.shrinkResources = false
+                }
+            }
+        }
+    }
+}

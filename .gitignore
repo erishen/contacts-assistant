@@ -1,0 +1,63 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# generated native folders
+/ios
+/android
+
+# ===== 隐私 / 本地数据（禁止提交 / 开源）=====
+# 本地真实微信好友数据（含真实 PII：备注名 + 微信ID），由 scripts/buildWechatData.js 本地生成。
+# 仓库克隆后不存在，由 metro.config.js 兜底解析到上方脱敏占位。
+src/data/wechatContacts.local.ts
+# 原始导出 / 合并 CSV（含真实手机号、微信ID）
+*.csv
+# 本地配置 / 密钥（含真实值，禁止提交）
+.env
+.env.*
+# 例外：保留示例模板供他人参考（不含真实值，可提交）
+!.env.example
+# 其它本地私有生成物
+*.local.ts
+# 签名密钥（Release 包签名，等同 App 身份；泄露可被冒用发布恶意更新）
+*.keystore
+
+# ===== 内部文档（仅本地保留，不对外公开）=====
+# 技术探索笔记与界面设计稿：属个人研究记录，非使用者所需，且易带入私人环境信息。
+# 对外公开的文档只保留 docs/BUILD_ANDROID.md（README 直接链接）。
+docs/EXPLORE_EXPO_ANDROID.md
+docs/settings-preview.html

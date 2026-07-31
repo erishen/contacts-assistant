@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "人脉助手",
+    "slug": "contacts-assistant",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "LSApplicationQueriesSchemes": [
+          "weixin",
+          "weixinULAPI"
+        ]
+      }
+    },
+    "android": {
+      "package": "com.erishen.contactsassistant",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "允许 $(PRODUCT_NAME) 访问您的通讯录，用于展示联系人列表。"
+        }
+      ],
+      "expo-sharing",
+      "expo-secure-store"
+    ]
+  }
+}
