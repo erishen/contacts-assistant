@@ -130,3 +130,10 @@ contacts-assistant/
 ## 许可证
 
 MIT —— 见 [`LICENSE`](LICENSE)。
+
+---
+
+## 相关文章
+
+- 中文: [contacts_assistant：个人联系人 AI 跟进助手](https://erishen.cn/contacts_assistant/)
+- English: [contacts_assistant: Personal CRM AI Follow-up Assistant](https://erishen.cn/contacts_assistant-en/)
