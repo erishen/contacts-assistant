@@ -61,3 +61,4 @@ src/data/wechatContacts.local.ts
 # 对外公开的文档只保留 docs/BUILD_ANDROID.md（README 直接链接）。
 docs/EXPLORE_EXPO_ANDROID.md
 docs/settings-preview.html
+.serena
